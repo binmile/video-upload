@@ -1,0 +1,86 @@
+.titleText {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 40px 0 0;
+}
+
+.emptyView {
+  background-color: rgb(219, 219, 219);
+  height: 450px;
+  width: 800px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.videoLogoView {
+  height: 90px;
+  width: 90px;
+  margin-bottom: 5px;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.subContainer {
+  margin-left: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonView {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 15px 50px;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 200px;
+}
+
+.fileText {
+  font-size: 16px;
+  color: rgb(12, 12, 131);
+  margin: 20px 10px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dragDropContainer {
+  border: 2px dashed grey;
+  padding: 1px;
+  border-radius: 10px;
+}
+.lightText {
+  font-weight: bold;
+  font-size: 17px;
+  color: rgb(128, 128, 128);
+}
+
+.statusView {
+  margin-top: 50px;
+  margin-left: 210px;
+  color: rgb(12, 12, 131);
+}
+
+.listHeadingText {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.mainParentContainer {
+  margin-bottom: 60px;
+}

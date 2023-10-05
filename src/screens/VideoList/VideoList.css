@@ -1,0 +1,78 @@
+.listContainer {
+  margin: 10px 100px;
+}
+
+.listMainContainer {
+  margin: 10px 0;
+  background-color: #dbdbdb;
+  border: 1px solid black;
+  width: 100%;
+  padding: 5px 20px;
+  /* height: 50px; */
+  border-radius: 10px;
+}
+.videoTypeUi {
+  height: 45px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.videoPlayLogo {
+  height: 30px;
+  width: auto;
+}
+.flexRowBetween {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listId {
+  margin: 0 10px;
+}
+
+.rightLogo {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: flex-end;
+  right: 0;
+}
+
+.textContainer {
+  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userTextTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #16188d;
+}
+.videoPreview {
+  height: 400px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.rightBtnView {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}

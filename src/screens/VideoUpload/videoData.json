@@ -1,0 +1,18 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+    {
+        "id": 1,
+        "user_id": "Prakash Gupta",
+        "file_path": "https://upload-demo-ws.s3.ap-south-1.amazonaws.com/sample-30s.mp4",
+        "created_at": "2023-10-04T14:53:49.496+05:30"
+    },
+    {
+        "id": 2,
+        "user_id": "Prakash Binmile",
+        "file_path": "https://upload-demo-ws.s3.ap-south-1.amazonaws.com/sample-30s.mp4",
+        "created_at": "2023-10-05T14:53:49.496+05:30"
+    }
+]
+}
