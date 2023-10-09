@@ -5,4 +5,4 @@ const rootReducer = combineReducers({
   reducerVideoUpload,
 });
 
-export default rootReducer;
+export { rootReducer };

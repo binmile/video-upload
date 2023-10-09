@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./VideoUpload.css";
 import VideoLogo from "../../Assets/videLogo.png";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  getVideoList,
   setVideoFileName,
   setVideoFileSize,
   setVideoUrl,
 } from "./redux/actionVideoUpload";
 import CustomProgressBar from "../Components/CustomProgressBar";
 import VideoList from "../VideoList/VideoList";
-import data from "./videoData.json";
+// import data from "./videoData.json";
 
 const VideoUpload = () => {
   const [videoFile, setVideoFile] = useState({});
@@ -17,16 +18,17 @@ const VideoUpload = () => {
   const [status, setStatus] = useState("Status: Waiting for file selection");
   const [enable, setEnable] = useState(true);
   const [showProgress, setShowProgress] = useState(false);
+  const dispatch = useDispatch();
+
+  const { videoURL, fileSize, fileName, isLoading, videoListData } =
+    useSelector((state) => state.reducerVideoUpload);
 
   const userName = "Prakash Gupta";
 
   const chunkSize = 5 * 1024 * 1024; // 5 MB chunks we can adjust as needed
   let ws;
 
-  const { videoURL, fileSize, fileName } = useSelector(
-    (state) => state.reducerVideoUpload
-  );
-  const dispatch = useDispatch();
+  console.log("++++++++++++++++===", videoListData, isLoading);
 
   const handleUploadButtonClick = () => {
     document.getElementById("videoFileInput").click();
@@ -91,6 +93,7 @@ const VideoUpload = () => {
   };
 
   const handleUploadClick = () => {
+    dispatch(getVideoList());
     if (!videoFile) {
       setStatus("Status: No file selected.");
       return;
@@ -112,6 +115,7 @@ const VideoUpload = () => {
     };
     ws.onclose = () => {
       setStatus("Status: Connection closed.");
+      dispatch(getVideoList());
       setShowProgress(false);
     };
     ws.onerror = () => {
@@ -119,6 +123,10 @@ const VideoUpload = () => {
       ws.close();
     };
   };
+
+  useEffect(() => {
+    dispatch(getVideoList());
+  }, [dispatch]);
 
   return (
     <div className="mainParentContainer">
@@ -194,13 +202,15 @@ const VideoUpload = () => {
       </div>
       <div>
         <div className="listHeadingText">Uploaded Videos</div>
-        {data?.data.map((item) => (
-          <VideoList
-            id={item.id}
-            videoUrl={item.file_path}
-            userName={item.user_id}
-            date={item.created_at}
-          />
+        {videoListData.map((item, index) => (
+          <div key={index}>
+            <VideoList
+              id={item.id}
+              videoUrl={item.file_path}
+              userName={item.user_id}
+              date={item.created_at}
+            />
+          </div>
         ))}
       </div>
     </div>

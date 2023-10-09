@@ -82,7 +82,7 @@ const VideoUploadSecond = () => {
       const arrayBuffer = reader.result;
       ws.send(arrayBuffer);
       const percentComplete = (end / videoFile.size) * 100;
-      setProgress(percentComplete);
+      setProgress(`${percentComplete.toFixed(2)}`);
       setStatus(`Status: Uploading... ${percentComplete.toFixed(2)}%`);
       setChunkNum(end);
       sendChunk(end);

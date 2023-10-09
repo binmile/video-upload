@@ -1,9 +1,6 @@
 import { combineEpics } from "redux-observable";
-// import epicVideoUpload from "../screens/VideoUpload/redux/epicVideoUpload";
+import { epicGetVideoList } from "../screens/VideoUpload/redux/epicVideoUpload";
 
-const rootEpic = combineEpics(
-  // epic here
-  // epicVideoUpload
-);
+const rootEpic = combineEpics(epicGetVideoList);
 
-export default rootEpic;
+export { rootEpic };
